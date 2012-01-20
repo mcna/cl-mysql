@@ -109,9 +109,9 @@
     (let ((y (parse-integer string :start 0 :end 4))
 	  (m (parse-integer string :start 5 :end 7))
 	  (d (parse-integer string :start 8 :end 10)))
-      (unless (or (zerop y)
-                  (zerop m)
-                  (zerop d))
+      (when (and (< 1900 y)
+                 (< 0 m 13)
+                 (< 0 d 32))
         (encode-universal-time 0 0 0 d m y 0)))))
 
 (defun string-to-seconds (string &optional len)
