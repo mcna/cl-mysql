@@ -24,8 +24,8 @@
 ;;;;
 (defpackage com.hackinghat.cl-mysql
   (:use :cl)
-  (:nicknames "CL-MYSQL")
-  (:shadowing-import-from "CL-MYSQL-SYSTEM"
+  (:nicknames #:cl-mysql)
+  (:shadowing-import-from #:cl-mysql-system
 	  #:connect #:query #:use #:disconnect #:ping #:option
 	  #:client-version #:server-version
 	  #:list-dbs #:list-tables #:list-processes #:list-fields
